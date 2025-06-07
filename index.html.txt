@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Güzel Esmam</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+        .wallpaper {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 0;
+            opacity: 0.07;
+            pointer-events: none;
+            background-image: 
+                repeating-linear-gradient(
+                    0deg, 
+                    transparent, 
+                    transparent 40px, 
+                    rgba(0,0,0,0.03) 40px, 
+                    rgba(0,0,0,0.03) 80px
+                ),
+                repeating-linear-gradient(
+                    90deg, 
+                    transparent, 
+                    transparent 40px, 
+                    rgba(0,0,0,0.03) 40px, 
+                    rgba(0,0,0,0.03) 80px
+                );
+        }
+        .numbers {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 1;
+            font-size: 48px;
+            color: #007acc;
+            opacity: 0.15;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            pointer-events: none;
+        }
+        .numbers span {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .center-text {
+            z-index: 2;
+            font-size: 2.5rem;
+            color: #e60073;
+            background: rgba(255,255,255,0.8);
+            padding: 24px 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body>
+    <div class="wallpaper"></div>
+    <div class="numbers" id="numbers"></div>
+    <div class="center-text">Seni seviyorum güzel Esmam</div>
+    <script>
+        // Arka plana 58 sayısını tekrar tekrar ekle
+        const numbersDiv = document.getElementById('numbers');
+        const cols = Math.ceil(window.innerWidth / 80);
+        const rows = Math.ceil(window.innerHeight / 80);
+        let html = '';
+        for(let i=0; i<rows*cols; i++) {
+            html += '<span>58</span>';
+        }
+        numbersDiv.innerHTML = html;
+    </script>
+</body>
+</html>
